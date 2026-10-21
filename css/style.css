@@ -23,6 +23,7 @@ body {}
 
 .full-navbar {
     position: sticky;
+    top: 0;
     z-index: 1000;
     background: black;
     padding: 0 0.5rem;
@@ -47,7 +48,8 @@ body {}
 }
 
 .logo-text {
-    font-weight: 300 italic;
+    font-weight: 300;
+    font-style: italic;
 }
 
 .box {
@@ -89,15 +91,55 @@ input::placeholder {
     border: 1px solid white;
     border-radius: 0.8rem;
 }
+
+
 /* sidebars */
-.up-icon {
-    position: absolute;
-    top: 0;
-    bottom: 100%;
-    left: 0;
-    right: 70%;
-    display: flex;
-    flex-direction: column;
-    padding: 0 0.4rem;
+.sidebar {
+    display: none;
 }
 
+.sidebar.active {
+    display: block;
+}
+
+.up-icon {
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    right: 10%;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-active {
+    position: relative;
+    padding: 0 1rem;
+    font-size: 1.3rem;
+    margin: 0.4rem;
+}
+
+.icon-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    width: 85%;
+    height: 0.2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.7s ease;
+}
+
+.icon-active:hover::after {
+    transform: scaleX(1);
+}
+
+/* icon gambar */
+.icon-active .fa-solid {
+    font-size: large;
+}
