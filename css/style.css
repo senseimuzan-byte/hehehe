@@ -7,11 +7,13 @@
     font-family: 'poppins', sans-serif;
     color: white;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.2rem;
     border: none;
 }
 
-body {}
+body {
+    background-color: #1B1D23;
+}
 
 .full-left,
 .full-right,
@@ -22,10 +24,10 @@ body {}
 }
 
 .full-navbar {
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 1000;
-    background: black;
+    background: #212529;
     padding: 0 0.5rem;
     display: flex;
     justify-content: space-between;
@@ -38,8 +40,7 @@ body {}
     padding: 0.4rem;
     border-radius: 0.8rem;
     margin-right: 0.5rem;
-    background-color: black;
-    ;
+    background-color: #212529;
     border: 1px solid white;
 }
 
@@ -52,7 +53,7 @@ body {}
     font-style: italic;
 }
 
-.box {
+box {
     margin-right: 0.5rem;
 }
 
@@ -92,6 +93,66 @@ input::placeholder {
     border-radius: 0.8rem;
 }
 
+.setting-list {
+    position: absolute;
+    top: 90%;
+    background-color: #212529;
+    right: 0;
+    width: 25%;
+    border: 1px solid rgba(255, 255, 255, 0.701);
+    border-radius: 0.2rem;
+    padding: 0.2rem 0;
+    cursor:pointer;
+}
+.setting-list button {
+    cursor:pointer;
+}
+
+ul li {
+    list-style: none;
+    position: relative;
+}
+
+.setting-icon {
+    margin-left: 0.5rem;
+    width:100%;
+}
+.listText:hover {
+    border:1px solid white;
+}
+
+.language {
+    background-color: #212529;
+    width: 90%;
+    border: 1px solid rgba(252, 252, 252, 0.6);
+    margin: 0.5rem 0;
+}
+
+.buttonSettings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dualbtn {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding: 0 0.5rem;
+
+}
+
+.light,
+.dark {
+    width: 60%;
+    background-color: #212529;
+    border: 1px solid rgba(252, 252, 252, 0.6);
+}
+
+.logoTheme {
+    padding: 0.4rem;
+    margin: 0 0.1rem;
+}
 
 /* sidebars */
 .sidebar {
@@ -104,15 +165,16 @@ input::placeholder {
 
 .up-icon {
     position: absolute;
-    top: 100%;
+    top:0;
     bottom: 0;
     left: 0;
     right: 10%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color:#212529;
     height: 100vh;
     width: 50%;
     display: flex;
     flex-direction: column;
+    
 }
 
 .icon-active {
@@ -122,24 +184,37 @@ input::placeholder {
     margin: 0.4rem;
 }
 
-.icon-active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -0.5rem;
-    width: 85%;
-    height: 0.2rem;
-    background-color: rgba(255, 255, 255, 0.8);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.7s ease;
-}
-
-.icon-active:hover::after {
-    transform: scaleX(1);
-}
-
 /* icon gambar */
 .icon-active .fa-solid {
     font-size: large;
+
+}
+
+/* this is for tablet*/
+@media (max-width:543px) {
+    * {
+        font-size: 0.9rem;
+        font-weight: 200;
+    }
+
+    .logo-text {
+        font-weight: 300;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+}
+
+/* this is for phone */
+@media (max-width:367px) {
+    * {
+        font-size: 0.7rem;
+        font-weight: 200;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+        font-weight: 500;
+    }
 }
